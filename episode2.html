@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第1集 《豪豪奇遇记：数据魔法书》</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xgplayer@3.0.12/dist/xgplayer.min.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #4a9eff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> 返回剧集列表
+        </a>
+        
+        <div class="player-container">
+            <h2>第1集：《豪豪奇遇记：数据魔法书》</h2>
+            <p class="episode-info">时长：24分钟 · 上线时间：2024-01-01</p>
+            
+            <!-- 播放器容器 -->
+            <div id="player"></div>
+            
+            <div class="player-controls">
+                <button onclick="toggleSpeed()" class="control-btn">
+                    <i class="fas fa-tachometer-alt"></i> 倍速
+                </button>
+                <button onclick="window.location.reload()" class="control-btn">
+                    <i class="fas fa-redo"></i> 重新加载
+                </button>
+            </div>
+        </div>
+        
+        <div class="episode-description">
+            <h3><i class="fas fa-info-circle"></i> 本集简介</h3>
+            <p>一部探险的故事，开启智慧冒险的钥匙。
+★ 内容简介 ★
+小学生豪豪在科技馆偶然唤醒了AI魔法书小智，从此踏上了修复数据之源的冒险旅程。他必须穿越逻辑森林、循环山谷等神奇的数字空间，运用编程思维解决各种难题。
+在精彩刺激的冒险中，孩子们将跟随豪豪学习条件判断、循环控制等编程概念，培养逻辑思维和解决问题的能力。抽象的知识化作有趣的游戏，让学习变得轻松自然。
+这本寓教于乐的童书适合8-12岁孩子阅读，既能享受精彩故事，又能收获面向未来的重要能力。让我们一起开启这场融合科技与幻想的智慧之旅！
+
+【推荐语】
+◆ 一本让孩子在精彩冒险中自然掌握编程思维的奇妙故事书！
+◆ 用生动有趣的故事点燃孩子对科技的兴趣，培养逻辑思维能力。
+◆跟随豪豪的冒险，让孩子在潜移默化中获得面向未来的核心竞争力！</p>
+        </div>
+    </div>
+
+    <!-- 引入播放器库 -->
+	<link rel="stylesheet" href="https://unpkg.byted-static.com/xgplayer/3.0.23/dist/index.min.css"/>
+<script charset="utf-8" src="https://unpkg.byted-static.com/xgplayer/3.0.23/dist/index.min.js"></script>
+
+<script charset="utf-8" src="https://unpkg.byted-static.com/xgplayer-hls/3.0.23/dist/index.min.js"></script>
+    
+  
+    
+    <script src="auth.js"></script>
+    <script>
+        // 检查权限
+        checkAccess().then(hasAccess => {
+            if (!hasAccess) {
+                document.querySelector('.player-container').innerHTML = `
+                    <div class="no-access">
+                        <h3><i class="fas fa-lock"></i> 需要订阅</h3>
+                        <p>请先订阅以观看本集内容</p>
+                        <a href="index.html" class="subscribe-btn">返回订阅</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            // 如果有权限，初始化播放器
+            // 替换为您的腾讯云VOD播放地址
+            const videoUrl = "https://1254395789.vod-qcloud.com/1dd6d0c6vodtranssh1254395789/cc2511ce5145403711133011575/adp.10.m3u8";
+            
+            new Player({
+                id: 'player',
+                url: videoUrl,
+                playsinline: true,
+                autoplay: true,
+                fluid: true,
+                lang: 'zh-cn',
+                volume: 0.6,
+                pip: true,
+                cssFullscreen: false,
+                airplay: true,
+                download: false,
+                playbackRate: [0.5, 0.75, 1, 1.25, 1.5, 2]
+            });
+        });
+
+        let speedIndex = 2; // 默认1x
+        function toggleSpeed() {
+            const rates = [0.5, 0.75, 1, 1.25, 1.5, 2];
+            speedIndex = (speedIndex + 1) % rates.length;
+            const player = window.player;
+            if (player) {
+                player.playbackRate = rates[speedIndex];
+                alert('播放速度：' + rates[speedIndex] + 'x');
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
