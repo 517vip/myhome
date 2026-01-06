@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第1集 - 《您的动漫名》</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xgplayer@3.0.12/dist/xgplayer.min.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #4a9eff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> 返回剧集列表
+        </a>
+        
+        <div class="player-container">
+            <h2>第1集：您的集名</h2>
+            <p class="episode-info">时长：24分钟 · 上线时间：2024-01-01</p>
+            
+            <!-- 播放器容器 -->
+            <div id="player"></div>
+            
+            <div class="player-controls">
+                <button onclick="toggleSpeed()" class="control-btn">
+                    <i class="fas fa-tachometer-alt"></i> 倍速
+                </button>
+                <button onclick="window.location.reload()" class="control-btn">
+                    <i class="fas fa-redo"></i> 重新加载
+                </button>
+            </div>
+        </div>
+        
+        <div class="episode-description">
+            <h3><i class="fas fa-info-circle"></i> 本集简介</h3>
+            <p>这里是第1集的剧情简介。请在这里填写您的剧情介绍。</p>
+        </div>
+    </div>
+
+    <!-- 引入播放器库 -->
+	<link rel="stylesheet" href="https://unpkg.byted-static.com/xgplayer/3.0.23/dist/index.min.css"/>
+<script charset="utf-8" src="https://unpkg.byted-static.com/xgplayer/3.0.23/dist/index.min.js"></script>
+
+<script charset="utf-8" src="https://unpkg.byted-static.com/xgplayer-hls/3.0.23/dist/index.min.js"></script>
+    
+  
+    
+    <script src="js/auth.js"></script>
+    <script>
+        // 检查权限
+        checkAccess().then(hasAccess => {
+            if (!hasAccess) {
+                document.querySelector('.player-container').innerHTML = `
+                    <div class="no-access">
+                        <h3><i class="fas fa-lock"></i> 需要订阅</h3>
+                        <p>请先订阅以观看本集内容</p>
+                        <a href="index.html" class="subscribe-btn">返回订阅</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            // 如果有权限，初始化播放器
+            // 替换为您的腾讯云VOD播放地址
+            const videoUrl = "https://1254395789.vod-qcloud.com/1dd6d0c6vodtranssh1254395789/ccbc1c3d5145403710999413133/v.f50000.m3u8";
+            
+            new Player({
+                id: 'player',
+                url: videoUrl,
+                playsinline: true,
+                autoplay: true,
+                fluid: true,
+                lang: 'zh-cn',
+                volume: 0.6,
+                pip: true,
+                cssFullscreen: false,
+                airplay: true,
+                download: false,
+                playbackRate: [0.5, 0.75, 1, 1.25, 1.5, 2]
+            });
+        });
+
+        let speedIndex = 2; // 默认1x
+        function toggleSpeed() {
+            const rates = [0.5, 0.75, 1, 1.25, 1.5, 2];
+            speedIndex = (speedIndex + 1) % rates.length;
+            const player = window.player;
+            if (player) {
+                player.playbackRate = rates[speedIndex];
+                alert('播放速度：' + rates[speedIndex] + 'x');
+            }
+        }
+    </script>
+</body>
+</html>

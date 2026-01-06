@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《您的动漫名》专属播放厅</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航 -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-play-circle"></i>
+                <h1>《您的动漫名》</h1>
+            </div>
+            <div class="user-info" id="userInfo">
+                <span>正在验证权限...</span>
+            </div>
+        </header>
+
+        <!-- 欢迎区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>欢迎来到专属播放厅</h2>
+                <p>订阅会员可观看全部剧集及后续更新</p>
+                <div class="hero-stats">
+                    <span><i class="fas fa-film"></i> 已上线 5 集</span>
+                    <span><i class="fas fa-clock"></i> 每周更新</span>
+                    <span><i class="fas fa-hd"></i> 1080P 高清</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 剧集列表 -->
+        <section class="episodes">
+            <h2><i class="fas fa-list"></i> 剧集列表</h2>
+            <div class="episode-grid" id="episodeList">
+                <!-- 剧集项由JS动态生成 -->
+            </div>
+        </section>
+
+        <!-- 订阅指引 -->
+        <section class="subscription">
+            <div class="subscription-box">
+                <h3><i class="fas fa-crown"></i> 成为订阅会员</h3>
+                <p>解锁全部剧集 + 抢先观看新剧集 + 导演评论音轨</p>
+                <a href="https://afdian.com/a/zywwj" target="_blank" class="subscribe-btn">
+                    <i class="fas fa-rocket"></i> 前往爱发电订阅
+                </a>
+                <p class="note">订阅后，请返回此页面刷新即可观看</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 《您的动漫名》制作委员会 · 仅限订阅会员观看</p>
+            <p class="footer-links">
+                <a href="#" onclick="showHelp()"><i class="fas fa-question-circle"></i> 观看帮助</a>
+                |
+                <a href="https://您的粉丝群链接" target="_blank"><i class="fas fa-users"></i> 加入社群</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- 帮助模态框 -->
+    <div class="modal" id="helpModal">
+        <div class="modal-content">
+            <span class="close" onclick="hideHelp()">&times;</span>
+            <h3><i class="fas fa-question-circle"></i> 观看指南</h3>
+            <ol>
+                <li>点击上方按钮前往爱发电完成订阅</li>
+                <li>订阅后，爱发电会提供您的<strong>专属用户ID</strong></li>
+                <li>返回此页面，URL后添加 <code>?user_id=您的ID</code></li>
+                <li>或直接点击我们通过爱发电私信发送给您的链接</li>
+                <li>刷新页面即可观看全部剧集</li>
+            </ol>
+            <p><strong>示例链接：</strong><br>
+            <code>https://您的用户名.github.io/仓库名/?user_id=afdian_123456</code></p>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/episodes.js"></script>
+</body>
+</html>
