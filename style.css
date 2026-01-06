@@ -95,7 +95,7 @@ body {
 /* 剧集网格 */
 .episodes h2 {
     margin-bottom: 25px;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -372,4 +372,5 @@ body {
     .subscription-box {
         padding: 30px 20px;
     }
+
 }
