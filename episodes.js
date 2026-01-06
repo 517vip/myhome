@@ -103,7 +103,8 @@ function renderEpisodes() {
             <div class="episode-content">
                 <div class="episode-title">
                     <span>${episode.title}</span>
-                    ${isLocked ? '<span class="badge"><br><i class="fas fa-clock"></i> 待更新</span>' : ''}
+					
+                    ${isLocked ? '<br><span class="badge"><br><i class="fas fa-clock"></i> 待更新</span>' : ''}
                 </div>
                 <div class="episode-meta">
                     <span><i class="far fa-clock"></i> ${episode.duration}</span>
@@ -124,6 +125,7 @@ function renderEpisodes() {
 // 页面加载时渲染剧集
 
 document.addEventListener('DOMContentLoaded', renderEpisodes);
+
 
 
 
