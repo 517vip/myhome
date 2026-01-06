@@ -5,7 +5,7 @@ const EPISODES = [
         title: "第一集：《豪豪奇遇记：数据魔法书》",
         duration: "24:30",
         date: "2026-01-01",
-        description: "为爱发电，速通体验",
+        description: "全网首发",
         thumbnail: "🎬",
         locked: false
     },
@@ -14,7 +14,7 @@ const EPISODES = [
         title: "第二集：《豪豪奇遇记：数据魔法书》",
         duration: "23:15",
         date: "2026-01-08",
-        description: "为爱发电，速通体验",
+        description: "全网首发",
         thumbnail: "🎬",
         locked: false
     },
@@ -23,7 +23,7 @@ const EPISODES = [
         title: "第三集：《豪豪奇遇记：数据魔法书》",
         duration: "25:10",
         date: "2026-01-15",
-        description: "为爱发电，速通体验",
+        description: "全网首发",
         thumbnail: "🎬",
         locked: false
     },
@@ -32,7 +32,7 @@ const EPISODES = [
         title: "第四集：《豪豪奇遇记：数据魔法书》",
         duration: "26:45",
         date: "2026-01-22",
-        description: "为爱发电，速通体验",
+        description: "全网首发",
         thumbnail: "🎬",
         locked: false
     },
@@ -41,7 +41,7 @@ const EPISODES = [
         title: "第五集：《豪豪奇遇记：数据魔法书》",
         duration: "27:20",
         date: "2026-01-29",
-        description: "为爱发电，速通体验",
+        description: "全网首发",
         thumbnail: "🎬",
         locked: false
     },
@@ -125,6 +125,7 @@ function renderEpisodes() {
 // 页面加载时渲染剧集
 
 document.addEventListener('DOMContentLoaded', renderEpisodes);
+
 
 
 
