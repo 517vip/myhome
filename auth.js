@@ -6,8 +6,8 @@
 // 示例：付费用户ID列表（实际应该从服务器获取）
 const PAID_USERS = [
     'zywwj',
-    'afdian_789012',
-    'afdian_345678',
+    'hzc',
+    'wcd',
     // 添加更多用户ID...
 ];
 
@@ -105,4 +105,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
 });
