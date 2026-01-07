@@ -5,6 +5,7 @@
 
 // 示例：付费用户ID列表（实际应该从服务器获取）
 const PAID_USERS = [
+    'Free',
     'zywwj',
     'hzc',
     'wcd',
@@ -110,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
 
 
 
