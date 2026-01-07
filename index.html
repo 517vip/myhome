@@ -6,6 +6,29 @@
     <title>您的专属VIP演播厅：《豪豪奇遇记：数据魔法书》</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+    <script>
+// 页面离开时保存表单数据
+window.addEventListener('beforeunload', function() {
+  const formData = {
+    id: document.getElementById('userId').value,
+    name: document.getElementById('userName').value,
+    // 添加其他需要保存的字段
+  };
+  sessionStorage.setItem('formCache', JSON.stringify(formData));
+});
+
+// 页面加载时恢复数据
+window.addEventListener('load', function() {
+  const cached = sessionStorage.getItem('formCache');
+  if (cached) {
+    const formData = JSON.parse(cached);
+    if (formData.id) document.getElementById('userId').value = formData.id;
+    if (formData.name) document.getElementById('userName').value = formData.name;
+    // 恢复其他字段
+  }
+});
+</script>
 </head>
 <body>
     <div class="container">
@@ -85,6 +108,7 @@
 </body>
 
 </html>
+
 
 
 
