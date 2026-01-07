@@ -71,6 +71,27 @@ function updateUIForNoAccess(reason) {
             <a href="https://afdian.com/a/zywwj" target="_blank" style="margin-left: 10px; color: #4a9eff;">
                 <i class="fas fa-external-link-alt"></i> 立即订阅
             </a>
+
+            <!-- 在页面任意位置放置 -->
+<a href="index.html" id="dynamicBackLink" class="back-link">
+    <i class="fas fa-arrow-left"></i> 返回
+</a>
+
+<script>
+// 自动设置返回链接
+function setupBackLink() {
+    const userId = getUrlParam('user_id') || localStorage.getItem('last_user_id');
+    const backLink = document.getElementById('dynamicBackLink');
+    
+    if (userId) {
+        // 带上user_id参数返回
+        backLink.href = `index.html?user_id=${encodeURIComponent(userId)}`;
+    } else {
+        // 没有参数，普通返回
+        backLink.href = 'index.html';
+    }
+}
+</script>
         `;
     }
 }
@@ -107,4 +128,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
 
