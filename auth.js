@@ -68,7 +68,7 @@ function updateUIForNoAccess(reason) {
         userInfoEl.innerHTML = `
             <i class="fas fa-lock" style="color: #ff6b6b; margin-right: 8px;"></i>
             ${reason}，请先订阅
-            <a href="https://afdian.com/a/zydmj" target="_blank" style="margin-left: 10px; color: #4a9eff;">
+            <a href="https://afdian.com/a/zywwj" target="_blank" style="margin-left: 10px; color: #4a9eff;">
                 <i class="fas fa-external-link-alt"></i> 立即订阅
             </a>
         `;
@@ -107,3 +107,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
