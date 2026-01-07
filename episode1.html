@@ -46,9 +46,21 @@ window.addEventListener('load', function() {
 </head>
 <body>
     <div class="container">
-        <a href="index.html?user_id=" class="back-link" >
-            <i class="fas fa-arrow-left"></i> <button onclick="window.history.back()">返回剧集列表</button>
-        </a>
+       <a href="javascript:void(0)" onclick="goBackWithId()" class="back-link">
+    <i class="fas fa-arrow-left"></i> 返回剧集列表
+</a>
+
+<script>
+function goBackWithId() {
+    const userId = document.getElementById('userName').value;
+    // 保存用户ID
+    if (userId) {
+        localStorage.setItem('lastUserId', userId);
+    }
+    // 返回上一页
+    window.history.back();
+}
+</script>
         
         <div class="player-container">
             <h2>第1集：《豪豪奇遇记：数据魔法书》</h2>
@@ -141,6 +153,7 @@ window.addEventListener('load', function() {
 </body>
 
 </html>
+
 
 
 
